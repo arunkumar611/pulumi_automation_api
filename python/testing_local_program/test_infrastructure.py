@@ -5,7 +5,7 @@ import requests
 import unittest
 
 stack_name = "dev"
-aws_region = "eu-west-1"
+aws_region = "us-west-2"
 
 work_dir = os.path.join(os.path.dirname(__file__), "infrastructure")
 

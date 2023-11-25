@@ -2,14 +2,25 @@
 
 import re
 import pulumi
+import pulumi_aws as aws
 from pulumi_aws import s3, iam
 
 # Create an AWS resource (S3 Bucket)
 bucket = s3.Bucket('auto-api-bucket',
     website=s3.BucketWebsiteArgs(
         index_document="index.html"
-    )
+    ),
 )
+
+# Configure Block Public Access settings for the bucket
+public_access_block = aws.s3.BucketPublicAccessBlock('auto-api-bucket-public-access-block',
+    bucket=bucket.id,
+    block_public_acls=False,
+    ignore_public_acls=False,
+    block_public_policy=False,
+    restrict_public_buckets=False
+)
+
 
 content = """<html><head>
 <title>Hello S3</title><meta charset="UTF-8">

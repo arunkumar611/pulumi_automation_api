@@ -1,0 +1,4 @@
+config:
+  aws:region: us-west-2
+  voting-app:redis-password:
+    secure: AAABACB9Ryxj3ZaUQmHFvDn9vM6Nx82DXZiqHzNw63Awjf9it3H0iL3KKg==

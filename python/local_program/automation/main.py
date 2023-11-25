@@ -29,7 +29,7 @@ print("successfully initialized stack")
 
 print("setting up config")
 stack.set_config("aws:region", auto.ConfigValue(value="us-west-2"))
-stack.set_config("voting-app:redis-password", auto.ConfigValue(value="my_password", secret=True))
+stack.set_config("voting-app:redis-password", auto.ConfigValue(value="my_password2", secret=True))
 print("config set")
 
 print("refreshing stack")
